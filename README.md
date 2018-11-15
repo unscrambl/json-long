@@ -2,7 +2,7 @@
 
 # json-long
 
-JSON.parse/stringify with longsupport. Based on Douglas Crockford [JSON.js](https://github.com/douglascrockford/JSON-js) package and [long.js](https://github.com/dcodeIO/long.js) library.
+JSON.parse/stringify with long support. Based on Douglas Crockford [JSON.js](https://github.com/douglascrockford/JSON-js) package and [long.js](https://github.com/dcodeIO/long.js) library.
 
 Example:
 
