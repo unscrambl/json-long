@@ -145,13 +145,13 @@ var json_parse = function (options) {
             if (!isFinite(number)) {
                 error("Bad number");
             } else {
-                if (string.length <= 15)
+                if (Number(string).toString() !== string)
                 {
-                    return number;
+                    if (Long == null)
+                      Long = require('long');
+                    return Long.fromString(string);    
                 }
-                if (Long == null)
-                  Long = require('long');
-                return Long.fromString(string);
+                return number
             }
         },
 
