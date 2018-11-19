@@ -131,6 +131,7 @@ var json_parse = function (options) {
                 }
             }
             if (ch === 'e' || ch === 'E') {
+                isFloat = true;
                 string += ch;
                 next();
                 if (ch === '-' || ch === '+') {
