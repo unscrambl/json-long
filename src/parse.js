@@ -111,7 +111,7 @@ var json_parse = function (options) {
 
         number = function () {
 // Parse a number value.
-
+            var isFloat = false;
             var number,
                 string = '';
 
@@ -124,6 +124,7 @@ var json_parse = function (options) {
                 next();
             }
             if (ch === '.') {
+                isFloat = true;
                 string += '.';
                 while (next() && ch >= '0' && ch <= '9') {
                     string += ch;
@@ -145,7 +146,7 @@ var json_parse = function (options) {
             if (!isFinite(number)) {
                 error("Bad number");
             } else {
-                if (Number(string).toString() !== string)
+                if (!isFloat && Number(string).toString() !== string)
                 {
                     if (Long == null)
                       Long = require('long');
