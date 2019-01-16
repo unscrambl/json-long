@@ -57,6 +57,7 @@
 var Long = null;
 var json_parse = function (options) {
     "use strict";
+    options = options || {};
 
 // This is a function that can parse a JSON text, producing a JavaScript
 // data structure. It is a simple, recursive descent parser. It does not use
@@ -151,7 +152,7 @@ var json_parse = function (options) {
                 {
                     if (Long == null)
                       Long = require('long');
-                    return Long.fromString(string);    
+                    return Long.fromString(string, options.unsigned);
                 }
                 return number
             }
