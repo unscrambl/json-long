@@ -266,7 +266,14 @@ var JSON = module.exports;
 
             if (isLong)
             {
-                return value.toString();
+                if (value.unsigned)
+                {
+                    return `{"__longValue":${value.toString()},"__unsigned":true}`;
+                }
+                else
+                {
+                    return value.toString();
+                }
             }
 
 // Make an array to hold the partial results of stringifying this object value.
