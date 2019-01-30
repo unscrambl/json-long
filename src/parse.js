@@ -82,6 +82,15 @@ var json_parse = function (options) {
         },
         text,
 
+        deserializeLong = function(object) {
+            if (typeof object.__longValue !== "undefined" && typeof object.__unsigned !== "undefined")
+            {
+                // object.__unsigned cannot be false
+                return object.__longValue.toUnsigned();
+            }
+            return object;
+        },
+
         error = function (m) {
 
 // Call error when something is wrong.
@@ -154,7 +163,7 @@ var json_parse = function (options) {
                       Long = require('long');
                     return Long.fromString(string, options.unsigned);
                 }
-                return number
+                return number;
             }
         },
 
@@ -291,7 +300,7 @@ var json_parse = function (options) {
                     white();
                     if (ch === '}') {
                         next('}');
-                        return object;
+                        return deserializeLong(object);
                     }
                     next(',');
                     white();
