@@ -6,7 +6,7 @@ var JSONUnsignedLong = require('../index')({unsigned: true});
 describe("Tests the Long support with unsigned long values", function() {
     it("tests the round-trip of unsigned Long values", function(done) {
         var unsignedLongObject = {value: Long.fromString("18446744073709551614", true)};
-        var unsignedLongJsonString = '{"value":{"__longValue":18446744073709551614,"__unsigned":true}}';
+        var unsignedLongJsonString = '{"value":{"_longValue":18446744073709551614,"_unsigned":true}}';
 
         // Round-trip: object -> JSON -> object
         var stringifiedUnsignedLongObject = JSONUnsignedLong.stringify(unsignedLongObject);

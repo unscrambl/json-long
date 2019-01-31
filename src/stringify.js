@@ -268,7 +268,7 @@ var JSON = module.exports;
             {
                 if (value.unsigned)
                 {
-                    return `{"__longValue":${value.toString()},"__unsigned":true}`;
+                    return `{"_longValue":${value.toString()},"_unsigned":true}`;
                 }
                 else
                 {

@@ -83,10 +83,10 @@ var json_parse = function (options) {
         text,
 
         deserializeLong = function(object) {
-            if (typeof object.__longValue !== "undefined" && typeof object.__unsigned !== "undefined")
+            if (typeof object._longValue !== "undefined" && typeof object._unsigned !== "undefined")
             {
                 // object.__unsigned cannot be false
-                return object.__longValue.toUnsigned();
+                return object._longValue.toUnsigned();
             }
             return object;
         },
