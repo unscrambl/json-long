@@ -5,8 +5,8 @@
   },
   "description": "JSON.parse / JSON.stringify with long support",
   "devDependencies": {
-    "chai": "4.1.2",
-    "mocha": "5.1.1"
+    "chai": "4.3.4",
+    "mocha": "8.4.0"
   },
   "keywords": [
     "JSON",
@@ -22,5 +22,5 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -R spec --check-leaks test/*.spec.js"
   },
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
